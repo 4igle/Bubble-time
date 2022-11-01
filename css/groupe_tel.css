@@ -1,0 +1,76 @@
+@media screen and (max-width: 1200px)
+{
+	form.form
+	{
+		margin-left: 3em;
+	}
+
+	p.retour
+	{
+		font-size: 55px;
+		margin-top: 200px;
+	}
+
+	h2
+	{
+		font-size: 70px;
+		margin-left: 1.3em;
+		width: 700px;
+		margin-top: 125px;
+		margin-bottom: 130px;
+	}
+
+	label.nom_groupe
+	{
+		font-size: 50px;
+	}
+
+	fieldset
+	{
+		border: 2px gray solid;
+	}
+
+	#nom_groupe
+	{
+		font-size: 57px;
+		width: 14.75em;
+		margin-bottom: 1em;
+		margin-top: 20px;
+	}
+
+	div.contacts
+	{
+		width: 45em;
+		max-height: 800px;
+	}
+
+	label.contact
+	{
+		height: 2.5em;
+		font-size: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.inputGroup label:before
+	{
+		height: 15px;
+		width: 15px;
+		transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.inputGroup label:after {
+	  width: 40px;
+	  height: 40px;
+	  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+}
+
+	input.valider
+	{
+		height: 2.5em;
+		width: 15.3em;
+		margin-top: 50px;
+		font-size: 55px;
+	}
+}

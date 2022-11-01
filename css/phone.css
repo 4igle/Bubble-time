@@ -1,0 +1,42 @@
+@media screen and (max-width: 1200px)
+{
+	div.discussions
+	{
+		width: 100%;
+	}
+
+	div.contact
+	{
+		height: 200px;
+		font-size: 2.9em;
+	}
+
+	div.formulaires
+	{
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	div.formulaires select, div.formulaires input
+	{
+		height: 100px;
+		font-size: 2.5em;
+	}
+
+	input.bouton_options, input.bouton_recherche
+	{
+		width: 250px;
+	}
+
+	div.js
+	{
+		height: 50px;
+	}
+
+	div.conv_msg_msg
+	{
+		height: 50px;
+	}
+}

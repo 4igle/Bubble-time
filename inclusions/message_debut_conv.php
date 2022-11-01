@@ -1,0 +1,4 @@
+<div class="avertissement">
+<h3 class="avertissement">Important</h3>
+<p class="avertissement">Cette messagerie a été codée par un étudiant indépendant et n'est par conséquent pas aussi parfaite que celles que vous avez l'habitude d'utiliser. Des améliorations concernant de nouvelles fonctionnalités sont en cours, <a href="maj.php" class="avertissement">en savoir plus</a>. Notez qu'il est déconseillé de communiquer des informations sensibles sur des messageries en ligne, celle-ci y compris. Sachez néamoins que vos mots de passe et messages sont cryptés et que Bubble time n'y a pas accès. Pour plus d'informations, cliquez sur le lien ci-dessus.</p>
+</div>
