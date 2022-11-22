@@ -1,4 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 /script/scroll.js linguist-vendored
-*.php linguist-language=PHP
+**.php linguist-language=PHP
