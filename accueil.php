@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 	if (!(isset($_SESSION['id'])) or !(isset($_SESSION['pseudo'])))
 	{
 		$_SESSION = array();
@@ -21,10 +21,10 @@
         <script type="text/javascript" src="script/retour.js" defer></script>
     	<?php
     	if (isset($_GET['conv']) and $_GET['conv'] != "")
-    	{ 
+    	{
     		?> <script type="text/javascript" src="script/focus.js" defer></script>
     		<script type="text/javascript" src="script/phone_disc.js" defer></script>
-    		<link rel="stylesheet" type="text/css" href="css/phone_disc.css"> <?php 
+    		<link rel="stylesheet" type="text/css" href="css/phone_disc.css"> <?php
     	}
     	else
     	{
@@ -32,7 +32,7 @@
     		<link rel="stylesheet" type="text/css" href="css/phone.css"> <?php
     	}
     	?>
-    	<script src="script/scroll.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
     	<?php
@@ -90,17 +90,17 @@
 			    			<div class="type_select">
 			    				<p class="type_select">Tout</p>
 			    			</div>
-			    		</a>	
+			    		</a>
 		    			<a href="accueil.php?<?php if (isset($conv)) echo 'conv=' . $conv . '&amp;' ?>type=mp" class="type_select" style="<?php if (isset($_GET['type']) and $_GET['type'] == 'mp') echo "background-color: rgb(130, 130, 130);"; ?>">
 			    			<div class="type_select">
 			    				<p class="type_select">Messages privés</p>
 			    			</div>
-			    		</a>	
+			    		</a>
 		    			<a href="accueil.php?<?php if (isset($conv)) echo 'conv=' . $conv . '&amp;' ?>type=groupe" class="type_select" style="<?php if (isset($_GET['type']) and $_GET['type'] == 'groupe') echo "background-color: rgb(130, 130, 130);"; ?>">
 			    			<div class="type_select">
 			    				<p class="type_select">Groupes</p>
 			    			</div>
-			    		</a>	
+			    		</a>
 		    		</div>
 		    	</div>
 		    	<div class="convs">
@@ -137,13 +137,13 @@
 							{
 								$non_lu = "non_lu1";
 								foreach ($donnees as $key => $value) {
-									if (preg_match("#^gid([1-9]|[1-3][0-9])$#", $key)) 
+									if (preg_match("#^gid([1-9]|[1-3][0-9])$#", $key))
 									{
 										if ($value == $_SESSION['id'])
 										{
 											$num = preg_replace("#^gid([1-9]|[1-3][0-9])$#", "$1" , $key);
 											$non_lu = "non_lu" . $num;
-										}		
+										}
 									}
 								}
 								$nombre_messages = $donnees[$non_lu];
@@ -176,8 +176,8 @@
 										<div class="conv_msg">
 											<div class="conv_msg_msg">
 												<div class="js" style="min-height: 18px; line-height: 1.2em;">
-													<?php 
-														$x = openssl_decrypt($donnees['message'], "AES-128-ECB" , $donnees['clef']); 
+													<?php
+														$x = openssl_decrypt($donnees['message'], "AES-128-ECB" , $donnees['clef']);
 														$x = preg_replace('#<a href=".*">(.*)</a>#', "$1", $x);
 														echo $x;
 													?>
@@ -194,13 +194,13 @@
 												$x = $nombre_messages;
 												if ($x > 99) {$x = "99+";}
 												echo '<div class="num"><div class="numero">' . $x . '</div></div>';
-											}											
+											}
 										?>
 									</div>
 								</div>
 							</a>
 						<?php }
-						$req->closeCursor();	
+						$req->closeCursor();
 		    		?>
 		    	</div>
 	    	</div>
@@ -245,9 +245,9 @@
 			    							{
 			    								echo $donnees['pseudo2'];
 			    							}
-			    						?>			    							
+			    						?>
 			    					</h1>
-			    				</div> 
+			    				</div>
 			    			<div class="bulles" id="bulles">
 			    			<div class="bulles_contenu" id="bulles_contenu">
 			    			<?php
@@ -290,7 +290,7 @@
 			    				</div>
 			    				<?php } ?>
 			    				<div class="<?php echo $emplacement ?>" <?php if ($donnees['pseudo'] == $last_pseudo) {echo 'style="margin-top: 0.2em;"';} else {echo 'style="margin-top: 1.3em;"';} ?> >
-			    					<?php 
+			    					<?php
 			    					if ($disc_groupe and $donnees['pseudo'] != $last_pseudo)
 			    					{
 			    						echo '<p class="pseudo_groupe">' . $donnees['pseudo'] . '</p>';
@@ -316,7 +316,7 @@
 			    			$req->execute(array(
 			    								'id' => $_GET['conv'],
 			    								'latest_env' => $_SESSION['id']
-			    								));	
+			    								));
 			    			if ($disc_groupe) //mise à 0 de son compteur non lus personnel
 			    			{
 			    				$req = $bdd->prepare('SELECT * FROM groupe WHERE iddisc = :iddisc');
@@ -327,13 +327,13 @@
 
 			    				$non_lu = "non_lu1";
 								foreach ($donnees as $key => $value) {
-									if (preg_match("#^id([1-9]|[1-3][0-9])$#", $key)) 
+									if (preg_match("#^id([1-9]|[1-3][0-9])$#", $key))
 									{
 										if ($value == $_SESSION['id'])
 										{
 											$num = preg_replace("#^id([1-9]|[1-3][0-9])$#", "$1" , $key);
 											$non_lu = "non_lu" . $num;
-										}		
+										}
 									}
 								}
 								$req->closeCursor();
@@ -342,7 +342,7 @@
 				    			$req->execute(array(
 				    								'iddisc' => $_GET['conv'],
 				    								));
-			    			}	    			
+			    			}
 
 			    			if ($conv_pas_vide == 0)
 		    				{
@@ -357,7 +357,7 @@
 			    			<script language="javascript">
 							  var $scroll_clipper = $('#bulles'); //Le conteneur, qui a une hauteur fixe (200px)
 							  var $scroll_text = $('#bulles_contenu'); //Le contenu, qui a une hauteur variable, en fonction de la longueur du texte
-							   
+
 							  function move_down() { //Aller en bas
 							    $scroll_clipper[0].scrollTop = $scroll_text.height();
 							  }
